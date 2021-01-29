@@ -36,7 +36,7 @@ public class MntDeployController {
 
     @RequestMapping("/page")
     public String page() {
-        IPage<MntDeploy> page = mntDeployServiceImpl.page(new Page<>(20, 1));
+        IPage<MntDeploy> page = mntDeployServiceImpl.page(new Page<>(2, 1));
         return JSON.toJSONString(page);
     }
 }
