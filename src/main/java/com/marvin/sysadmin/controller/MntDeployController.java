@@ -24,7 +24,6 @@ import java.util.List;
 @RequestMapping("/mnt-deploy")
 public class MntDeployController {
 
-
     @Autowired
     private IMntDeployService mntDeployServiceImpl;
 
@@ -36,7 +35,7 @@ public class MntDeployController {
 
     @RequestMapping("/page")
     public String page() {
-        // todo
+        // todo  
         IPage<MntDeploy> page = mntDeployServiceImpl.page(new Page<>(2, 1));
         return JSON.toJSONString(page);
     }
