@@ -53,11 +53,11 @@ public class CodeGenerator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://localhost:3306/eladmin?useUnicode=true&useSSL=false&characterEncoding=utf8");
+        dsc.setUrl("jdbc:mysql://localhost:3306/sys_admin?useUnicode=true&useSSL=false&characterEncoding=utf8");
         // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
-        dsc.setPassword("root");
+        dsc.setPassword("123456");
         mpg.setDataSource(dsc);
 
         // 包配置
@@ -136,7 +136,7 @@ public class CodeGenerator {
 //        strategy.setSuperServiceImplClass("strategy")
         strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));
         //自定义基础的Entity类，公共字段（可添加更多）
-        strategy.setSuperEntityColumns("id");
+//        strategy.setSuperEntityColumns("id");
         //驼峰转连字符
         strategy.setControllerMappingHyphenStyle(true);
         //表前缀
