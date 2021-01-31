@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
  * <p>
- * 佛历信息表 Mapper 接口
+ * 信息表 Mapper 接口
  * </p>
  *
  * @author marvin

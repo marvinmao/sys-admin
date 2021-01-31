@@ -11,7 +11,7 @@ import java.util.Date;
 
 /**
  * <p>
- * 佛历信息表
+ * 信息表
  * </p>
  *
  * @author marvin

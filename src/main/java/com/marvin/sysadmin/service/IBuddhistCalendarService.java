@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
  * <p>
- * 佛历信息表 服务类
+ * 信息表 服务类
  * </p>
  *
  * @author marvin

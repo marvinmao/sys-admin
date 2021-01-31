@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * <p>
- * 佛历信息表 服务实现类
+ * 信息表 服务实现类
  * </p>
  *
  * @author marvin
