@@ -1,7 +1,7 @@
 package com.marvin.sysadmin.mapper.auto;
 
-import com.marvin.sysadmin.entity.auto.BuddhistCalendar;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.marvin.sysadmin.entity.auto.BuddhistCalendar;
 
 /**
  * <p>
