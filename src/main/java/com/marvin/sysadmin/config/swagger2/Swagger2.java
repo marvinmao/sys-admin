@@ -1,4 +1,4 @@
-package com.marvin.sysadmin.config;
+package com.marvin.sysadmin.config.swagger2;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

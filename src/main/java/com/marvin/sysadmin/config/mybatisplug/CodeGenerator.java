@@ -1,4 +1,4 @@
-package com.marvin.sysadmin.config;
+package com.marvin.sysadmin.config.mybatisplug;
 
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
+import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
 
@@ -14,6 +15,7 @@ import java.util.Scanner;
  * 自动生成mybatisplus的相关代码
  * https://segmentfault.com/a/1190000019397149
  */
+@Component
 public class CodeGenerator {
 
     /**
@@ -49,11 +51,12 @@ public class CodeGenerator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://localhost:3306/sys_admin?useUnicode=true&useSSL=false&characterEncoding=utf8");
-        // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
+        dsc.setUrl("jdbc:mysql://172.18.206.164:3306/sh_view_db?autoReconnect=true&useUnicode=true&characterEncoding=utf-8");
+        // dsc.setSchemaName("public");
         dsc.setUsername("root");
-        dsc.setPassword("123456");
+        dsc.setPassword("Shdp$MyO21");
+
         mpg.setDataSource(dsc);
 
         // 包配置
