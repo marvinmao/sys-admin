@@ -17,7 +17,7 @@ public class AdminController {
     @Autowired
     private AdminService adminServiceImpl;
 
-    @RequestMapping("/get_count")
+    @RequestMapping("/count")
     public Integer getCount() {
         return adminServiceImpl.mntDeployCount();
     }

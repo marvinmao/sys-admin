@@ -47,13 +47,20 @@ public class ResultJson implements Serializable {
 
     public static ResultJson success() {
         ResultJson resultJson = new ResultJson();
-        resultJson.setCode("00000");
-        resultJson.setMessage("操作成功！");
+        resultJson.setCode(Constants.SUCCESS);
+        resultJson.setMessage(Constants.SUCCESS_MSG);
         return resultJson;
     }
 
     public static ResultJson failure() {
-        return new ResultJson("99999", "操作失败！", null);
+        return new ResultJson(Constants.FAILURE, Constants.FAILURE_MSG, null);
+    }
+
+    public static ResultJson failure(String code, String msg) {
+        ResultJson resultJson = new ResultJson();
+        resultJson.setCode(code);
+        resultJson.setMessage(msg);
+        return resultJson;
     }
 
     public ResultJson add(String key, Object value) {

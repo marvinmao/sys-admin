@@ -1,4 +1,4 @@
-package com.marvin.sysadmin.config;
+package com.marvin.sysadmin.config.mybatisplug;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import org.springframework.context.annotation.Bean;
