@@ -3,6 +3,6 @@
 <mapper namespace="com.marvin.sysadmin.mapper.AdminMapper">
 
     <select id="mntDeployCount" resultType="java.lang.Integer">
-        select count(*) from mnt_deploy
+        select count(*) from yidian_iqinput_details
     </select>
 </mapper>

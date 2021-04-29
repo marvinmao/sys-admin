@@ -19,6 +19,8 @@ public class AdminController {
 
     @RequestMapping("/count")
     public Integer getCount() {
-        return adminServiceImpl.mntDeployCount();
+        int count = adminServiceImpl.mntDeployCount();
+        System.out.println("count : " + count);
+        return count;
     }
 }
