@@ -52,10 +52,10 @@ public class CodeGenerator {
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
-        dsc.setUrl("jdbc:mysql://172.18.206.164:3306/sh_view_db?autoReconnect=true&useUnicode=true&characterEncoding=utf-8");
+        dsc.setUrl("jdbc:mysql://localhost:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf-8");
         // dsc.setSchemaName("public");
-        dsc.setUsername("root");
-        dsc.setPassword("Shdp$MyO21");
+        dsc.setUsername("test");
+        dsc.setPassword("test");
 
         mpg.setDataSource(dsc);
 
