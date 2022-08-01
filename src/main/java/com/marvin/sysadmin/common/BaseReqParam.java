@@ -43,7 +43,7 @@ public abstract class BaseReqParam {
     }
 
     public Integer getPageSize() {
-        return pageSize == null ? 10 : pageSize;
+        return pageSize == null ? 100 : pageSize;
     }
 
     public void setPageSize(Integer pageSize) {
@@ -51,7 +51,7 @@ public abstract class BaseReqParam {
     }
 
     public Date getCreateTime() {
-        return createTime == null ? new Date() : createTime;
+        return createTime;
     }
 
     public void setCreateTime(Date createTime) {
@@ -59,7 +59,7 @@ public abstract class BaseReqParam {
     }
 
     public Date getUpdateTime() {
-        return updateTime == null ? new Date() : updateTime;
+        return updateTime;
     }
 
     public void setUpdateTime(Date updateTime) {
@@ -67,7 +67,7 @@ public abstract class BaseReqParam {
     }
 
     public String getCreateUser() {
-        return createUser == null ? "system" : createUser;
+        return createUser;
     }
 
     public void setCreateUser(String createUser) {
@@ -75,7 +75,7 @@ public abstract class BaseReqParam {
     }
 
     public String getUpdateUser() {
-        return updateUser == null ? "system" : updateUser;
+        return updateUser;
     }
 
     public void setUpdateUser(String updateUser) {

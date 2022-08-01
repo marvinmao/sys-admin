@@ -15,8 +15,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @Date: 2021/1/31
  * @Description:
  */
-@Configuration
 @EnableSwagger2
+@Configuration
 public class Swagger2 {
     /**
      * 通过 createRestApi函数来构建一个DocketBean
@@ -39,7 +39,7 @@ public class Swagger2 {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 //页面标题
-                .title("Spring Boot Swagger2 构建RESTful API")
+                .title("高考志愿填报平台 API")
                 //条款地址
                 .termsOfServiceUrl("http://despairyoke.github.io/")
                 .contact("zwd")
