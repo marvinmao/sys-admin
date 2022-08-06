@@ -10,6 +10,7 @@ import com.marvin.sysadmin.entity.auto.ProvinceAllAreas;
 import com.marvin.sysadmin.pojo.ProvinceAllAreasParam;
 import com.marvin.sysadmin.service.impl.ProvinceAllAreasServiceImpl;
 import com.marvin.sysadmin.vo.MenuProvinceAllAreasVo;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,7 +33,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/province-all-areas")
-@ApiOperation("省市区数据")
+@Api(value = "省市区接口", tags = {"省市区接口"})
 public class ProvinceAllAreasController {
 
     private Logger logger = LoggerFactory.getLogger(ProvinceAllAreasController.class);
@@ -40,8 +41,8 @@ public class ProvinceAllAreasController {
     @Autowired
     private ProvinceAllAreasServiceImpl provinceAllAreasService;
 
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
-    @ApiOperation("省市区数据联动获取")
+    @GetMapping(value = "/list")
+    @ApiOperation(value = "省市区数据联动获取", httpMethod = "GET")
     public ResultJson list(HttpServletRequest request,
                            @RequestParam(value = "ParentId", required = false, defaultValue = "0") String ParentId) {
         try {
