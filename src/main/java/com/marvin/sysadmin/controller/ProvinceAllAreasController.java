@@ -44,10 +44,10 @@ public class ProvinceAllAreasController {
     @GetMapping(value = "/list")
     @ApiOperation(value = "省市区数据联动获取", httpMethod = "GET")
     public ResultJson list(HttpServletRequest request,
-                           @RequestParam(value = "ParentId", required = false, defaultValue = "0") String ParentId) {
+                           @RequestParam(value = "parentId", required = false, defaultValue = "0") String parentId) {
         try {
             QueryWrapper<ProvinceAllAreas> queryWrapper = new QueryWrapper<>();
-            queryWrapper.eq("ParentId", ParentId);
+            queryWrapper.eq("ParentId", parentId);
             queryWrapper.orderByAsc("ParentPath");
             List<ProvinceAllAreas> list = provinceAllAreasService.list(queryWrapper);
             List<MenuProvinceAllAreasVo> vos = new ArrayList<>();

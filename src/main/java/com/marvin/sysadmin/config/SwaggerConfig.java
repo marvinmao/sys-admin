@@ -1,5 +1,6 @@
 package com.marvin.sysadmin.config;
 
+import com.github.xiaoymin.swaggerbootstrapui.annotations.EnableSwaggerBootstrapUI;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -18,6 +19,7 @@ import java.util.List;
 
 @Configuration
 @EnableSwagger2
+@EnableSwaggerBootstrapUI
 public class SwaggerConfig {
 
 
@@ -63,7 +65,7 @@ public class SwaggerConfig {
     }
 
     private ApiInfo apiInfo() {
-        return new ApiInfoBuilder().title("action-swagger").description("swagger实战").termsOfServiceUrl("")
+        return new ApiInfoBuilder().title("高考志愿填报平台 API").description("swagger").termsOfServiceUrl("")
                 .version("1.0").build();
     }
 
