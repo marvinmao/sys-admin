@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.marvin.sysadmin.common.ResultJson;
 import com.marvin.sysadmin.entity.auto.ProvinceAllAreas;
 import com.marvin.sysadmin.pojo.ProvinceAllAreasParam;
-import com.marvin.sysadmin.service.impl.ProvinceAllAreasServiceImpl;
+import com.marvin.sysadmin.service.IProvinceAllAreasService;
 import com.marvin.sysadmin.vo.MenuProvinceAllAreasVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -39,7 +39,7 @@ public class ProvinceAllAreasController {
     private Logger logger = LoggerFactory.getLogger(ProvinceAllAreasController.class);
 
     @Autowired
-    private ProvinceAllAreasServiceImpl provinceAllAreasService;
+    private IProvinceAllAreasService provinceAllAreasServiceImpl;
 
     @GetMapping(value = "/list")
     @ApiOperation(value = "省市区数据联动获取", httpMethod = "GET")
@@ -49,7 +49,7 @@ public class ProvinceAllAreasController {
             QueryWrapper<ProvinceAllAreas> queryWrapper = new QueryWrapper<>();
             queryWrapper.eq("ParentId", parentId);
             queryWrapper.orderByAsc("ParentPath");
-            List<ProvinceAllAreas> list = provinceAllAreasService.list(queryWrapper);
+            List<ProvinceAllAreas> list = provinceAllAreasServiceImpl.list(queryWrapper);
             List<MenuProvinceAllAreasVo> vos = new ArrayList<>();
             if (!CollectionUtils.isEmpty(list)) {
                 list.forEach(entity -> {
@@ -65,18 +65,19 @@ public class ProvinceAllAreasController {
         }
     }
 
-//    @RequestMapping(value = "/page", method = RequestMethod.POST)
-//    public ResultJson page(HttpServletRequest request, @RequestBody ProvinceAllAreasParam param) {
-//        logger.info("page start param {}", JSON.toJSONString(param));
-//        try {
-//            IPage<ProvinceAllAreas> page =
-//                    provinceAllAreasService.page(new Page<>(param.getCurrentPage(), param.getPageSize()), null);
-//            return ResultJson.success().add("page", page);
-//        } catch (Exception e) {
-//            logger.error("操作失败：{}", e.getMessage());
-//            return ResultJson.failure();
-//        }
-//    }
+    @RequestMapping(value = "/page", method = RequestMethod.POST)
+    @ApiOperation(value = "分页查询", httpMethod = "POST")
+    public ResultJson page(HttpServletRequest request, @RequestBody ProvinceAllAreasParam param) {
+        logger.info("page start param {}", JSON.toJSONString(param));
+        try {
+            IPage<ProvinceAllAreas> page =
+                    provinceAllAreasServiceImpl.page(new Page<>(param.getCurrentPage(), param.getPageSize()), null);
+            return ResultJson.success().add("page", page);
+        } catch (Exception e) {
+            logger.error("操作失败：{}", e.getMessage());
+            return ResultJson.failure();
+        }
+    }
 
 //    @RequestMapping(value = "/tree", method = RequestMethod.POST)
 //    @ApiOperation("分页列表-信息")
@@ -84,11 +85,11 @@ public class ProvinceAllAreasController {
 //        try {
 //            long tsStart = System.currentTimeMillis();
 //            //查询所有数据
-//            List<ProvinceAllAreas> allList = provinceAllAreasService.list(null);
+//            List<ProvinceAllAreas> allList = provinceAllAreasServiceImpl.list(null);
 //            //查询顶级数据
 //            QueryWrapper<ProvinceAllAreas> queryWrapper = new QueryWrapper<>();
 //            queryWrapper.eq("LevelType", 1);
-//            List<ProvinceAllAreas> topList = provinceAllAreasService.list(queryWrapper);
+//            List<ProvinceAllAreas> topList = provinceAllAreasServiceImpl.list(queryWrapper);
 //
 //            List<MenuProvinceAllAreasVo> allVos = new ArrayList<>();
 //            allList.forEach(entity -> {
@@ -147,3 +148,4 @@ public class ProvinceAllAreasController {
 //        return childList;
 //    }
 }
+
