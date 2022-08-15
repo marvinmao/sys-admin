@@ -21,6 +21,6 @@ public class MenuProvinceAllAreasVo {
 
     private String provinceShortName;
 
-    List<SubjectsInfoVo> subjectsInfoVoList;
+    List<SubjectsInfoVo> subjectsList;
 
 }

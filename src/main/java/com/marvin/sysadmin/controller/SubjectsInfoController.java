@@ -61,7 +61,7 @@ public class SubjectsInfoController {
                     vo.setProvinceCode(entity.getParentPath());
                     vo.setProvinceName(entity.getName());
                     vo.setProvinceShortName(entity.getShortName());
-                    vo.setSubjectsInfoVoList(subjectsInfoExtMapper.listByProCode(entity.getParentPath()));
+                    vo.setSubjectsList(subjectsInfoExtMapper.listByProCode(entity.getParentPath()));
                     vos.add(vo);
                 });
             }
