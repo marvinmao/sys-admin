@@ -15,14 +15,12 @@ import java.util.List;
 @Data
 public class MenuProvinceAllAreasVo {
 
-    private String id;
+    private String provinceCode;
 
-    private String ParentId;
+    private String provinceName;
 
-    private String LevelType;
+    private String provinceShortName;
 
-    private String Name;
-
-    private String ShortName;
+    List<SubjectsInfoVo> subjectsInfoVoList;
 
 }

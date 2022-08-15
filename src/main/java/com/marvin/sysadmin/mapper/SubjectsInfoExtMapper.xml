@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.marvin.sysadmin.mapper.SubjectsInfoExtMapper">
+
+    <select id="listByProCode" resultType="com.marvin.sysadmin.vo.SubjectsInfoVo">
+        SELECT
+            subjects_code AS subjectsCode,
+            subjects_name AS subjectsName
+        FROM
+            subjects_info
+        WHERE
+            FIND_IN_SET(#{proCode}, province_code)
+        ORDER BY
+            sort ASC
+    </select>
+</mapper>
