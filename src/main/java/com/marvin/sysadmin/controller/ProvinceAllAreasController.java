@@ -47,7 +47,7 @@ public class ProvinceAllAreasController {
                            @RequestParam(value = "parentId", required = false, defaultValue = "0") String parentId) {
         try {
             QueryWrapper<ProvinceAllAreas> queryWrapper = new QueryWrapper<>();
-            queryWrapper.eq("ParentId", parentId);
+            queryWrapper.eq("parentId", parentId);
             queryWrapper.orderByAsc("ParentPath");
             List<ProvinceAllAreas> list = provinceAllAreasServiceImpl.list(queryWrapper);
             List<MenuProvinceAllAreasVo> vos = new ArrayList<>();
@@ -55,6 +55,9 @@ public class ProvinceAllAreasController {
                 list.forEach(entity -> {
                     MenuProvinceAllAreasVo vo = new MenuProvinceAllAreasVo();
                     BeanUtils.copyProperties(entity, vo);
+                    vo.setProvinceCode(entity.getParentPath());
+                    vo.setProvinceName(entity.getName());
+                    vo.setProvinceShortName(entity.getShortName());
                     vos.add(vo);
                 });
             }

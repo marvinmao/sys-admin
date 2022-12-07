@@ -15,6 +15,10 @@ import java.util.List;
 @Data
 public class MenuProvinceAllAreasVo {
 
+    private String Id;
+
+    private String parentId;
+
     private String provinceCode;
 
     private String provinceName;
